@@ -1,0 +1,22 @@
+.board-title {
+  background-color: red;
+  margin: 0.5em 0;
+  padding: .2em;
+  padding-left: 0.5em;
+  position: relative;
+  display: inline-block;
+  color: white;
+  border: 0;
+}
+
+.board-title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2em;
+  bottom: 0;
+  right: -0.7em;
+  z-index: -1;
+  background-color: red;
+  transform: skew(-35deg);
+}
