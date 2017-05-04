@@ -9,11 +9,9 @@ export default function RankBoard(props) {
     <div className="rank-board">
       <BoardTitle title={props.boardTitle} />
       <ul>
-        <RankList />
-        <RankList />
-        <RankList />
-        <RankList />
-        <RankList />
+        <RankList isMedal={true}/>
+        <RankList isMedal={true}/>
+        <RankList isMedal={true}/>
         <RankList />
         <RankList />
       </ul>

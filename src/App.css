@@ -20,8 +20,9 @@ html,body {
 }
 
 .rank-board {
-  flex-grow: 1;
+  flex: 1;
   height: 100%;
+  border-right: 1px solid gray;
 }
 
 .rank-board > ul {
@@ -34,3 +35,14 @@ html,body {
   align-items: stretch;
 }
 
+@media (min-height: 650px) {
+  html {
+    font-size: 25px;
+  }
+}
+
+@media (min-height: 750px) {
+  html {
+    font-size: 30px;
+  }
+}
