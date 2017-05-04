@@ -1,0 +1,28 @@
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 64.71%;
+}
+
+.user-info .avatar {
+  height: 100%;
+  width: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info .right-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 81.81%;
+  max-height: 3.65625rem;
+}
+
+.user-info .right-info .user-name {
+  color:black;
+  font-size: 2rem;
+}
