@@ -1,10 +1,12 @@
 .rank-list {
   list-style: none;
-  height: 16.77777%;
+  flex-grow: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-bottom: 2px solid #f4f4f4;
+  overflow: hidden;
+  min-height: 3.2rem;
 }
 
 .rank-number {
@@ -12,9 +14,5 @@
   width: auto;
   color: #898989;
   margin: 0 1.75rem;
-  display: inline-flex;
-  align-items: center;
-  font-size: 1.666667rem;
-  background-image: url('http://img.freepik.com/free-vector/golden-medal-design_1166-34.jpg?size=338&ext=jpg');
-  background-size: cover;
+  /*font-size: 1.666667rem;*/
 }

@@ -1,13 +1,14 @@
 .board-title {
   background-color: rgb(255, 94, 94);
-  margin: 3.05rem 0;
-  padding: 2rem;
-  padding-left: 2.23rem;
+  margin: 1rem 0;
+  padding: 0.7rem;
+  padding-left: 0.8rem;
   position: relative;
   display: inline-block;
   color: white;
   border: 0;
-  font-size: 4.77rem;
+  font-size: 1.7rem;
+  line-height: 1.7rem;
 }
 
 .board-title::after {

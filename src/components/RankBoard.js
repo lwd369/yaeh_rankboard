@@ -15,6 +15,7 @@ export default function RankBoard(props) {
         <RankList />
         <RankList />
         <RankList />
+        <RankList />
       </ul>
     </div>
   );
