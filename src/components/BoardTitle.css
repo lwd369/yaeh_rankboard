@@ -1,22 +1,22 @@
 .board-title {
   background-color: rgb(255, 94, 94);
-  margin: 1.5rem 0;
-  padding: 1rem;
-  padding-left: 0.5rem;
+  margin: 3.05rem 0;
+  padding: 2rem;
+  padding-left: 2.23rem;
   position: relative;
   display: inline-block;
   color: white;
   border: 0;
-  font-size: 2.1875rem;
+  font-size: 4.77rem;
 }
 
 .board-title::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 2rem;
+  left: 50px;
   bottom: 0;
-  right: -2.5rem;
+  right: -50px;
   z-index: -1;
   background-color: inherit;
   transform: skew(-35deg);
