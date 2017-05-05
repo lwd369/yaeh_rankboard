@@ -2,17 +2,16 @@
 import React from 'react';
 import BoardTitle from './BoardTitle';
 import RankList from './RankList';
+import './/RankBoard.css';
 
 export default function RankBoard(props) {
-  return(
+  const rankLists = props.boardData.map((data) => { return <RankList {...data} /> });
+
+  return (
     <div className="rank-board">
       <BoardTitle title={props.boardTitle} />
       <ul>
-        {
-          props.boardData.map((data) => {
-            return <RankList {...data}/>
-          })
-        }
+        {rankLists}
       </ul>
     </div>
   );
