@@ -9,10 +9,13 @@ export default class Utility {
       return element;
     });
 
-    for (let index = rankdArray.length; index < length; index++) {
-      rankdArray[index] = {};
+    if (rankdArray.length < length) {
+      for (let index = rankdArray.length; index < length; index++) {
+        rankdArray[index] = {};
+      }
     }
 
+    rankdArray.length = length;
     return rankdArray;
   }
 }

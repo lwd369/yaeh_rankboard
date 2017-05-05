@@ -2,47 +2,63 @@ import React, { Component } from 'react';
 import './App.css';
 import RankBoard from './components/RankBoard';
 import Utility from './utility';
-
-const avatar = "https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/andrew.png";
-
-const mockData = [
-  // { nickName: 'lwd', rank: '100', avatar: avatar, cost: '9999'},
-  // { nickName: 'lwd123', rank: '25', avatar: '', cost: '3541'},
-  // { nickName: 'lwd369', rank: '12', avatar: '', cost: '1234'},
-  // { nickName: 'lwd248', rank: '1', avatar: avatar, cost: '122'},
-  // { nickName: 'lwd137', rank: '12', avatar: '', cost: '50'},
-];
-
-const mockData2 = [
-  // { nickName: 'lwd', rank: '100', avatar: '', cost: '9999'},
-  // { nickName: 'lwd123', rank: '25', avatar: avatar, cost: '3541'},
-  // { nickName: 'lwd369', rank: '12', avatar: '', cost: '1234'},
-];
+import Request from 'superagent';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leftBoards: Utility.addRankNumber(mockData, 6),
-      rightBoards: Utility.addRankNumber(mockData2, 6)
+      rankBoards: [],
+      hosts: []
     }
   }
 
   render() {
+    const rankBoards = this.state.rankBoards.map((rankBoard, idx) => {
+      return <RankBoard boardTitle={this.state.hosts[idx]} boardData={rankBoard} key={idx}/>
+    });
+    
     return (
       <div className="App">
-        <RankBoard boardTitle="学习排行榜哈哈哈" boardData={this.state.leftBoards}/>
-        <RankBoard boardTitle="游戏排行榜" boardData={this.state.rightBoards}/>
+        {rankBoards}
       </div>
     );
   }
 
   componentDidMount() {
-
+    this.fetchData();
   }
 
   fetchData() {
-    
+    Request
+      .get('http://api.yeahstation.com:83/v1.0/contribution/list')
+      .query({ roomId: 11 })
+      .end((err, res) => {
+        const data = res.body.data;
+        const boards = this.parseBoardJsonToArray(data);
+        const hosts = this.getHostsName(boards);
+        this.setState({ rankBoards: boards, hosts: hosts });
+      });
+  }
+
+  parseBoardJsonToArray(data) {
+    const boards = [];
+    const index = [1, 2, 3, 4, 5, 6];
+    for (var idx in index) {
+      if (data['list' + idx] != null) {
+        let item = data['list' + idx];
+        boards.push(Utility.addRankNumber(item, 6));
+      }
+    }
+    return boards;
+  }
+
+  getHostsName(boards) {
+    const hosts = [];
+    for (let board of boards) {
+      hosts.push(board[0].AnchorName);
+    }
+    return hosts;
   }
 }
 

@@ -5,7 +5,7 @@ import './RankList.css';
 
 export default function RankList(props) {
   
-  const listClass = props.rank === undefined ? "rank-list hidden" : "rank-list";
+  const listClass = props.Grade === undefined ? "rank-list hidden" : "rank-list";
   const medalIcon = props.no <= 3 ? <span className="medal"></span> : <span className="rank-number">{props.no}</span>;
 
   return(
@@ -13,7 +13,7 @@ export default function RankList(props) {
       {medalIcon}
       <UserInfo {...props}/>
       <div className="y-diamond">
-        <span>{props.cost}</span>
+        <span>{props.Amount}</span>
       </div>
       <i className="diamon-icon"></i>
     </li>
