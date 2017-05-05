@@ -5,7 +5,7 @@ import RankList from './RankList';
 import './/RankBoard.css';
 
 export default function RankBoard(props) {
-  const rankLists = props.boardData.map((data) => { return <RankList {...data} /> });
+  const rankLists = props.boardData.map((data) => { return <RankList key={data.no} {...data} /> });
 
   return (
     <div className="rank-board">
