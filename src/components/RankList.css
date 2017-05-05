@@ -11,7 +11,7 @@
 
 .rank-number {
   color: #898989;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   margin-left: 0.8rem;
   font-size: 1rem;
   width: 1.75rem;
@@ -22,7 +22,7 @@
   width: 1.75rem;
   height: 1.75rem;
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   margin-left: 0.8rem;
   background-size: cover;
   background-image: url('http://img.freepik.com/free-vector/golden-medal-design_1166-34.jpg?size=338&ext=jpg');
@@ -32,6 +32,7 @@
   margin-left: auto;
   margin-right: 0.4rem;
   font-size: 1.75rem;
+  color: #434343;
 }
 
 .diamon-icon {

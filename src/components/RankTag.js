@@ -6,7 +6,8 @@ export default function RankTag(props) {
 
         <span className="star-icon"></span>
         <span className="rank-info">{props.rank}</span>
-
+        <span></span>
+        <span></span>
     </div>
   );
 }

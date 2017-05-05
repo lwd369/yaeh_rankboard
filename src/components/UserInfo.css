@@ -7,8 +7,8 @@
 }
 
 .user-info .avatar {
-  height: 100%;
-  width: auto;
+  height: 3.1rem;
+  width: 3.1rem;
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -22,7 +22,7 @@
 }
 
 .user-info .right-info .user-name {
-  color:black;
+  color:#434343;
   font-size: 1.1rem;
   line-height: 1.1rem;
 }

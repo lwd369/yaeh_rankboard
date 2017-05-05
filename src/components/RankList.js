@@ -4,14 +4,15 @@ import UserInfo from './UserInfo';
 import './RankList.css';
 
 export default function RankList(props) {
+  const listClass = props.rank === undefined ? "rank-list hidden" : "rank-list";
+  const medalIcon = props.no <= 3 ? <span className="medal"></span> : <span className="rank-number">{props.no}</span>;
 
-  const medalIcon = props.isMedal ? <span className="medal"></span> : <span className="rank-number">1</span>;
   return(
-    <li className="rank-list">
+    <li className={listClass}>
       {medalIcon}
-      <UserInfo />
+      <UserInfo {...props}/>
       <div className="y-diamond">
-        <span>88</span>
+        <span>{props.cost}</span>
       </div>
       <i className="diamon-icon"></i>
     </li>
