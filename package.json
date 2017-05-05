@@ -2,6 +2,7 @@
   "name": "yeah_rankboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.lwd369.com/rankboard",
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

@@ -25,4 +25,23 @@
   color:#434343;
   font-size: 1.1rem;
   line-height: 1.1rem;
+
+}
+
+@media (max-width: 480px) {
+  .user-info .right-info .user-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 5rem;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 700px) {
+    .user-info .right-info .user-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 15rem;
+  }
 }
