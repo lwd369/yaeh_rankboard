@@ -5,8 +5,7 @@ export default class Utility {
     let index = 0;
     const rankdArray = arr.map((element) => {
       index += 1;
-      element.no = index;
-      return element;
+      return {...element, no: index}
     });
 
     if (rankdArray.length < length) {
