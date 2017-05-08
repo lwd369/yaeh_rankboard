@@ -1,3 +1,4 @@
+// flow
 import React, { Component } from 'react';
 import './App.css';
 import RankBoard from './components/RankBoard';
@@ -15,9 +16,9 @@ class App extends Component {
 
   render() {
     const rankBoards = this.state.rankBoards.map((rankBoard, idx) => {
-      return <RankBoard boardTitle={this.state.hosts[idx]} boardData={rankBoard} key={idx}/>
+      return <RankBoard boardTitle={this.state.hosts[idx]} boardData={rankBoard} key={idx} />
     });
-    
+
     return (
       <div className="App">
         {rankBoards}
@@ -26,19 +27,26 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchData();
+    this.updateBoardData();
   }
 
-  fetchData() {
-    Request
-      .get('http://api.yeahstation.com:83/v1.0/contribution/list')
-      .query({ roomId: 11 })
-      .end((err, res) => {
-        const data = res.body.data;
-        const boards = this.parseBoardJsonToArray(data);
-        const hosts = this.getHostsName(boards);
-        this.setState({ rankBoards: boards, hosts: hosts });
-      });
+  async fetchData() {
+    return new Promise(resolve => {
+      Request
+        .get('http://api.yeahstation.com:83/v1.0/contribution/list')
+        .query({ roomId: 11 })
+        .end((err, res) => {
+          resolve(res.body.data);
+        });
+    })
+  }
+
+  updateBoardData() {
+    this.fetchData().then(data => {
+      const boards = this.parseBoardJsonToArray(data);
+      const hosts = this.getHostsName(boards);
+      this.setState({ rankBoards: boards, hosts: hosts });
+    });
   }
 
   parseBoardJsonToArray(data) {

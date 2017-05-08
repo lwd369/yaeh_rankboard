@@ -3,7 +3,7 @@
 export default class Utility {
   static addRankNumber(arr: array, length: number): array {
     let index = 0;
-    const rankdArray = arr.map((element) => {
+    const rankdArray = arr.map(element => {
       index += 1;
       return {...element, no: index}
     });
